@@ -26,8 +26,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=confluence
       - POSTGRES_PASSWORD=654321
-    ports:
-      - "5432"
+#    ports:
+#      - "5432"
     volumes:
       - /root/confluence-db_data:/var/lib/postgresql/data
     restart: always
