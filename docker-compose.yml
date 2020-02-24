@@ -9,7 +9,7 @@ services:
       - JVM_MAXIMUM_MEMORY=12g
       - JVM_CODE_CACHE_ARGS='-XX:InitialCodeCacheSize=1g -XX:ReservedCodeCacheSize=8g'
     depends_on:
-      - mysql
+      - db
     ports:
       - "8090:8090"
     volumes:
@@ -18,7 +18,7 @@ services:
     networks:
       - network-bridge
 
-  mysql:
+  db:
     image: postgres:9.6.17
     container_name: confluence-db
     environment:
