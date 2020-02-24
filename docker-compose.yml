@@ -19,7 +19,7 @@ services:
       - network-bridge
 
   db:
-    image: postgres:9.6.17
+    image: kutim/postgres:9.6.17
     container_name: confluence-db
     environment:
       - TZ='Asia/Shanghai'
