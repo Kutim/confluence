@@ -13,7 +13,7 @@ services:
     ports:
       - "8090:8090"
     volumes:
-      - /root/confluence_data:/var/confluence
+      - confluence-data:/var/confluence
     restart: always
     networks:
       - network-bridge
@@ -29,12 +29,13 @@ services:
 #    ports:
 #      - "5432"
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - confluence-db-data:/var/lib/postgresql/data
     restart: always
     networks:
       - network-bridge
 volumes:
-  db-data:
+  confluence-data:
+  confluence-db-data:
 
 networks:
   network-bridge:
