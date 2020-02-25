@@ -26,6 +26,10 @@ RUN mkdir -p ${CONFLUENCE_INSTALL} ${CONFLUENCE_HOME} ${AGENT_PATH} \
 && curl -o /opt/confluence/lib/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/${MYSQL_DRIVER_VERSION}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar -L \
 && echo "confluence.home = ${CONFLUENCE_HOME}" > ${CONFLUENCE_INSTALL}/${ATLASSIAN_PRODUCTION}/WEB-INF/classes/confluence-init.properties
 
+ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+ ENV TZ Asia/Shanghai
+ 
  WORKDIR $CONFLUENCE_INSTALL
  EXPOSE 8090
 
